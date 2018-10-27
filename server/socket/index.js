@@ -14,7 +14,7 @@ module.exports = io => {
     socket.on('new-channel', channel => {
       socket.broadcast.emit('new-channel', channel);
     });
-
+    
   });
 
 };
