@@ -1,5 +1,5 @@
 import axios from 'axios';
-import socket from '../socket';
+// import socket from '../socket';
 
 // ACTION TYPES
 const GET_CHANNEL = 'GET_CHANNEL';
@@ -19,7 +19,7 @@ export function getChannels (channels) {
 // THUNK CREATORS
 export function fetchChannels () {
 
-  return function thunk (dispatch) {
+  return function (dispatch) {
     return axios.get('/api/channels')
       .then(res => res.data)
       .then(channels => {
@@ -31,12 +31,12 @@ export function fetchChannels () {
 
 export function postChannel (channel, history) {
 
-  return function thunk (dispatch) {
+  return function (dispatch) {
     return axios.post('/api/channels', channel)
       .then(res => res.data)
       .then(newChannel => {
         dispatch(getChannel(newChannel));
-        socket.emit('new-channel', newChannel);
+       // socket.emit('new-channel', newChannel);
         history.push(`/channels/${newChannel.id}`);
       });
   };
