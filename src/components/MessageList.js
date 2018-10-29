@@ -16,6 +16,7 @@ export default class MessageList extends Component {
 
   render () {
     const messages = this.state.messages;
+    // get messages from state then filter by channelId for appropriate channel? -> map list of these messages
     return (
       <div>
       </div>
