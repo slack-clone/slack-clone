@@ -13,8 +13,9 @@ export default class MessageList extends Component {
       .then(res => res.data)
       .then(messages => this.setState({ messages }));
   }
-  
+
   render () {
+    const messages = this.state.messages;
     return (
       <div>
       </div>
