@@ -5,8 +5,9 @@ export default class NavBar extends Component {
 
   render () {
     return (
-      <div>
-      </div>
+      <nav>
+        <h3># channelname here</h3>
+      </nav>
     );
   }
 }
