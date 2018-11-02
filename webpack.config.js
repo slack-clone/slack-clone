@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: __dirname,
-    filename: './public/bundle.js'
+    path: __dirname + '/public',
+    filename: 'bundle.js'
   },
   devtool: 'source-map',
   module: {
@@ -15,8 +15,7 @@ module.exports = {
           path.resolve(__dirname, 'src')
         ],
         loader: 'babel-loader'
-      }
+      },
     ]
   }
 };
-
