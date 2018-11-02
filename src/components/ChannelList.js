@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
-function ChannelList (props) {
+export default class ChannelList extends Component {
 
-  return (
-    <ul>
-    </ul>
-  );
+  render () {
+    return (
+      <ul>
+        <li>
+          <NavLink to='/channels/1'>
+            <span># example_channel</span>
+            <span>0</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/channels/2'>
+            <span># general</span>
+            <span>0</span>
+          </NavLink>
+        </li>
+      </ul>
+    );
+  }
 }
-
