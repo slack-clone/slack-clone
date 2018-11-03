@@ -8,6 +8,7 @@ export default class NewMessageEntry extends Component {
       <form id="new-message-form">
         <div>
           <input
+            className="form-control"
             type="text"
             placeholder="Type here..."
           />
