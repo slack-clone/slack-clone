@@ -5,8 +5,8 @@ export default class Sidebar extends Component {
 
   render () {
     return (
-      <section >
-        <div>
+      <section className="sidebar">
+        <div className="sidebar-header">
           <h3 href="#">
             <div>Slack</div>
           </h3>

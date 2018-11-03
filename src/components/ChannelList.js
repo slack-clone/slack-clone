@@ -7,13 +7,13 @@ export default class ChannelList extends Component {
     return (
       <ul>
         <li>
-          <NavLink to='/channels/1'>
+          <NavLink to='/channels/1' activeClassName="active">
             <span># example_channel</span>
             <span>0</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to='/channels/2'>
+          <NavLink to='/channels/2' activeClassName="active">
             <span># general</span>
             <span>0</span>
           </NavLink>
