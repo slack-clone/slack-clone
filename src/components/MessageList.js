@@ -15,9 +15,11 @@ export default class MessageList extends Component {
   }
 
   render () {
+    const channelId = Number(this.props.match.params.channelId); 
     const messages = this.state.messages;
-    // get messages from state then filter by channelId for appropriate channel? -> map list of these messages
+    const filteredMessages = messages.filter(message => message.channelId === channelId); // filter msgs by chId
     return (
+      // map list of filtered messages
       <div>
       </div>
     );
