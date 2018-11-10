@@ -1,6 +1,8 @@
 import { createStore } from 'redux';
 
 const GOT_MESSAGES_FROM_SERVER = 'GOT_MESSAGES_FROM_SERVER';
+const WRITE_MESSAGE = 'WRITE_MESSAGE';
+const GOT_NEW_MESSAGE_FROM_SERVER = 'GOT_NEW_MESSAGE_FROM_SERVER';
 
 export function gotMessagesFromServer(messages) {
   return {
