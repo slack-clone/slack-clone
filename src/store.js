@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import loggerMiddleware from 'redux-logger';
 
 const GOT_MESSAGES_FROM_SERVER = 'GOT_MESSAGES_FROM_SERVER';
 const WRITE_MESSAGE = 'WRITE_MESSAGE';
@@ -47,5 +48,6 @@ function reducer(state = initialState, action) {
   }
 }
 
-const store = createStore(reducer);
+const res = applyMiddleware(loggerMiddleware);
+const store = createStore(reducer, res);
 export default store;
