@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import loggerMiddleware from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import axios from 'axios';
+import socket from './socket';
 
 const GOT_MESSAGES_FROM_SERVER = 'GOT_MESSAGES_FROM_SERVER';
 const WRITE_MESSAGE = 'WRITE_MESSAGE';
@@ -42,6 +43,19 @@ export function fetchMessages() {
         const action = gotMessagesFromServer(messages);
         dispatch(action);
     });
+  }
+}
+
+export function postMessage(message) {
+
+  return function thunk(dispatch) {
+    return axios.post('/api/messages', message)
+      .then(res => res.data)
+      .then(newMessage => {
+        const action = gotNewMessageFromServer(newMessage);
+        dispatch(action);
+        socket.emit('new-message', newMessage);
+      })
   }
 }
 
