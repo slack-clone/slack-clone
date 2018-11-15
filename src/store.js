@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import loggerMiddleware from 'redux-logger';
+import thunkMiddleware from 'redux-thunk';
 
 const GOT_MESSAGES_FROM_SERVER = 'GOT_MESSAGES_FROM_SERVER';
 const WRITE_MESSAGE = 'WRITE_MESSAGE';
@@ -48,6 +49,6 @@ function reducer(state = initialState, action) {
   }
 }
 
-const res = applyMiddleware(loggerMiddleware);
+const res = applyMiddleware(loggerMiddleware, thunkMiddleware);
 const store = createStore(reducer, res);
 export default store;
