@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import store, { writeMessage, gotNewMessageFromServer } from '../store';
+import store, { writeMessage, gotNewMessageFromServer, postMessage } from '../store';
 import axios from 'axios';
 
 
@@ -31,6 +31,9 @@ export default class NewMessageEntry extends Component {
     axios.post('/api/messages', { content: content, channelId: channelId })
       .then(res => res.data)
       .then(message => store.dispatch(gotNewMessageFromServer(message)));
+
+    const messageData = {content:content, channelId:channelId};
+    store.dispatch(postMessage(messageData));
   }
 
   render () {
